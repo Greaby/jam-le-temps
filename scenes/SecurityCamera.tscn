@@ -61,6 +61,7 @@ shape = SubResource( 1 )
 
 [node name="Torch" parent="Body" index="2" instance=ExtResource( 2 )]
 
-position = Vector2( 27.2875, 0 )
+shadow_enabled = false
+_sections_unfolded = [ "Shadow", "Transform" ]
 
 
