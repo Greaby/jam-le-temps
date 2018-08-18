@@ -1,27 +1,30 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://scripts/Character.gd" type="Script" id=1]
+[ext_resource path="res://scripts/Drone.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="CapsuleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 10, 10 )
+radius = 24.4539
+height = 33.1955
 
-[node name="Character" type="KinematicBody2D"]
+[node name="Drone" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 1
-collision_mask = 1
+collision_mask = 2
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
-speed = 300
+_sections_unfolded = [ "Collision" ]
+MAX_SPEED = 1500
+MAX_REVERSE_SPEED = 600
+ACCELERATION_FORCE = 20
+DECELERATION_FORCE = 40
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
-rotation = 1.5708
 texture = ExtResource( 2 )
-_sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 

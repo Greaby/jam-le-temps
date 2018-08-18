@@ -1,4 +1,5 @@
 extends KinematicBody2D
 
-const SPEED = 200
+export (int) var speed = 300
+
 const FRICTION = 0.1

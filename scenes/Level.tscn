@@ -1,9 +1,16 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://icon.png" type="Texture" id=1]
-[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/Drone.tscn" type="PackedScene" id=2]
 
-[node name="Level" type="Node2D" index="0"]
+[sub_resource type="Curve2D" id=1]
+
+bake_interval = 5.0
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 339.727, -147.146, 0, 0, 0, 0, 431.992, 308.375, 0, 0, 0, 0, -233.626, 176.977, 0, 0, 0, 0, -199.758, -98.6525, 0, 0, 0, 0, 339.727, -147.146 )
+}
+
+[node name="Level" type="Node2D"]
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
@@ -11,9 +18,9 @@ scale = Vector2( 100, 100 )
 texture = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Player" parent="." index="1" instance=ExtResource( 2 )]
+[node name="Drone" parent="." index="1" instance=ExtResource( 2 )]
 
-[node name="Camera2D" type="Camera2D" parent="Player" index="2"]
+[node name="Camera2D" type="Camera2D" parent="Drone" index="2"]
 
 anchor_mode = 1
 rotating = false
@@ -37,5 +44,26 @@ drag_margin_bottom = 0.2
 editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
+
+[node name="Path2D" type="Path2D" parent="." index="2"]
+
+self_modulate = Color( 0.5, 0.6, 1, 0.7 )
+curve = SubResource( 1 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D" index="0"]
+
+position = Vector2( 339.727, -147.146 )
+rotation = 1.37094
+offset = 0.0
+h_offset = 0.0
+v_offset = 0.0
+rotate = true
+cubic_interp = true
+loop = true
+lookahead = 4.0
+
+[node name="Sprite" type="Sprite" parent="Path2D/PathFollow2D" index="0"]
+
+texture = ExtResource( 1 )
 
 
