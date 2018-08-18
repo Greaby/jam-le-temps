@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
-export (int) var MAX_SPEED = 1500
-export (int) var MAX_REVERSE_SPEED = 600
+export (int) var MAX_SPEED = 500
+export (int) var MAX_REVERSE_SPEED = 300
 export (int) var ACCELERATION_FORCE = 20
 export (int) var DECELERATION_FORCE = 40
 const FRICTION_FORCE = .985

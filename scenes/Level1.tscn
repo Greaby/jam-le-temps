@@ -3,12 +3,14 @@
 [ext_resource path="res://scenes/Drone.tscn" type="PackedScene" id=1]
 [ext_resource path="res://tilesets/wall.tres" type="TileSet" id=2]
 
-[node name="Level1" type="Node2D" index="0"]
+[node name="Level1" type="Node2D"]
 
 [node name="Drone" parent="." index="0" instance=ExtResource( 1 )]
 
 position = Vector2( -125.264, -252.198 )
 collision_mask = 1
+MAX_SPEED = 500
+MAX_REVERSE_SPEED = 300
 
 [node name="Camera2D" type="Camera2D" parent="Drone" index="2"]
 
