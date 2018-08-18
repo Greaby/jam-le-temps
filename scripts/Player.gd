@@ -8,9 +8,11 @@ func _process(delta):
 
 func update_motion(delta):
 	var velocity = Vector2()
-	velocity.x += int(Input.is_action_pressed("ui_right")) - int(Input.is_action_pressed("ui_left"))
-	velocity.y += int(Input.is_action_pressed("ui_down")) - int(Input.is_action_pressed("ui_up"))
+	velocity.x += int(Input.is_action_pressed("move_right")) - int(Input.is_action_pressed("move_left"))
+	velocity.y += int(Input.is_action_pressed("move_down")) - int(Input.is_action_pressed("move_up"))
 	velocity = velocity.normalized() * SPEED
+	
+	rotation = velocity.angle()
 	
 	if not velocity == Vector2():
 		motion = velocity
