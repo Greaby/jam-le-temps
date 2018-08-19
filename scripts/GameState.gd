@@ -10,6 +10,7 @@ func _ready():
 	load_next_level()
 	
 func remove_level():
+	Global.Player = null
 	for level in $Level.get_children():
 		level.queue_free()
 	
@@ -28,6 +29,7 @@ func load_level(scene):
 	$Level.add_child(level.instance())
 
 func die():
+	Global.dead += 1
 	realod_level()
 	
 	
@@ -40,5 +42,13 @@ func _on_Timer_timeout():
 	var voices = $Voices.get_children()
 	var voice = voices[randi() % voices.size()]
 	voice.play()
-	$Timer.wait_time = randi() % 15 + 20
+	$VoiceTimer.wait_time = randi() % 15 + 20
 	
+
+func _increment_time():
+	Global.time += 1
+	
+func start_timer():
+	$AnimationPlayer.play("start_game")
+	$Timer.start()
+	$VoiceTimer.start()

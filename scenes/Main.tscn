@@ -1,20 +1,64 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://scripts/GameState.gd" type="Script" id=1]
-[ext_resource path="res://assets/sounds/zone de sauvegarde.wav" type="AudioStream" id=2]
-[ext_resource path="res://assets/sounds/fantasme bacchanalien.wav" type="AudioStream" id=3]
-[ext_resource path="res://assets/sounds/dans quelle aventure.3.wav" type="AudioStream" id=4]
-[ext_resource path="res://assets/sounds/et si un ami te chantait.4.wav" type="AudioStream" id=5]
-[ext_resource path="res://assets/sounds/il ne faut pas que tu tardes.4.wav" type="AudioStream" id=6]
-[ext_resource path="res://assets/sounds/il y a des routes.3.wav" type="AudioStream" id=7]
-[ext_resource path="res://assets/sounds/j'ai peur jimmy.2.wav" type="AudioStream" id=8]
-[ext_resource path="res://assets/sounds/je crois le lait de fée.3.wav" type="AudioStream" id=9]
-[ext_resource path="res://assets/sounds/la veux-tu vraiment démontrer.3.wav" type="AudioStream" id=10]
-[ext_resource path="res://assets/sounds/la vie est un cheval triste.3.wav" type="AudioStream" id=11]
-[ext_resource path="res://assets/sounds/qui ramassera cette pierre.3.wav" type="AudioStream" id=12]
-[ext_resource path="res://assets/sounds/si pour vaincre des dieux.3.wav" type="AudioStream" id=13]
-[ext_resource path="res://assets/sounds/tu es dans le cauchemard.3.wav" type="AudioStream" id=14]
-[ext_resource path="res://assets/sounds/tu te souviens prims.3.wav" type="AudioStream" id=15]
+[ext_resource path="res://assets/sounds/panneau solitaire.wav" type="AudioStream" id=2]
+[ext_resource path="res://assets/sounds/zone de sauvegarde.wav" type="AudioStream" id=3]
+[ext_resource path="res://assets/sounds/fantasme bacchanalien.wav" type="AudioStream" id=4]
+[ext_resource path="res://assets/sounds/dans quelle aventure.3.wav" type="AudioStream" id=5]
+[ext_resource path="res://assets/sounds/et si un ami te chantait.4.wav" type="AudioStream" id=6]
+[ext_resource path="res://assets/sounds/il ne faut pas que tu tardes.4.wav" type="AudioStream" id=7]
+[ext_resource path="res://assets/sounds/il y a des routes.3.wav" type="AudioStream" id=8]
+[ext_resource path="res://assets/sounds/j'ai peur jimmy.2.wav" type="AudioStream" id=9]
+[ext_resource path="res://assets/sounds/je crois le lait de fée.3.wav" type="AudioStream" id=10]
+[ext_resource path="res://assets/sounds/la veux-tu vraiment démontrer.3.wav" type="AudioStream" id=11]
+[ext_resource path="res://assets/sounds/la vie est un cheval triste.3.wav" type="AudioStream" id=12]
+[ext_resource path="res://assets/sounds/qui ramassera cette pierre.3.wav" type="AudioStream" id=13]
+[ext_resource path="res://assets/sounds/si pour vaincre des dieux.3.wav" type="AudioStream" id=14]
+[ext_resource path="res://assets/sounds/tu es dans le cauchemard.3.wav" type="AudioStream" id=15]
+[ext_resource path="res://assets/sounds/tu te souviens prims.3.wav" type="AudioStream" id=16]
+
+[sub_resource type="Animation" id=2]
+
+resource_name = "start_game"
+length = 2.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sounds/Background1:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 0.25, 0.25 ),
+"update": 0,
+"values": [ -80.0, -20.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sounds/Splash:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 4, 4 ),
+"update": 0,
+"values": [ -20.0, -80.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sounds/Splash:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 2 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=1]
 
@@ -47,12 +91,20 @@ tracks/1/keys = {
 "values": [ -80.0, -20.0 ]
 }
 
-[node name="Main" type="Node2D"]
+[node name="Main" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="." index="0"]
+[node name="Timer" type="Timer" parent="." index="0"]
 
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." index="1"]
+
+editor/display_folded = true
 layer = -1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -72,21 +124,22 @@ motion_offset = Vector2( 1, 1 )
 motion_mirroring = Vector2( 1920, 1080 )
 _sections_unfolded = [ "Motion" ]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="2"]
 
 root_node = NodePath("..")
 autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
+anims/start_game = SubResource( 2 )
 anims/switch_background_sound = SubResource( 1 )
 blend_times = [  ]
 
-[node name="Level" type="Node2D" parent="." index="2"]
+[node name="Level" type="Node2D" parent="." index="3"]
 
-[node name="Sounds" type="Node2D" parent="." index="3"]
+[node name="Sounds" type="Node2D" parent="." index="4"]
 
-[node name="Background1" type="AudioStreamPlayer" parent="Sounds" index="0"]
+[node name="Splash" type="AudioStreamPlayer" parent="Sounds" index="0"]
 
 stream = ExtResource( 2 )
 volume_db = -20.0
@@ -95,7 +148,7 @@ autoplay = true
 mix_target = 0
 bus = "Master"
 
-[node name="Background2" type="AudioStreamPlayer" parent="Sounds" index="1"]
+[node name="Background1" type="AudioStreamPlayer" parent="Sounds" index="1"]
 
 stream = ExtResource( 3 )
 volume_db = -80.0
@@ -104,27 +157,27 @@ autoplay = true
 mix_target = 0
 bus = "Master"
 
-[node name="Timer" type="Timer" parent="." index="4"]
+[node name="Background2" type="AudioStreamPlayer" parent="Sounds" index="2"]
+
+stream = ExtResource( 4 )
+volume_db = -80.0
+pitch_scale = 1.0
+autoplay = true
+mix_target = 0
+bus = "Master"
+
+[node name="VoiceTimer" type="Timer" parent="." index="5"]
 
 process_mode = 1
 wait_time = 15.0
 one_shot = false
-autostart = true
+autostart = false
 
-[node name="Voices" type="Node2D" parent="." index="5"]
+[node name="Voices" type="Node2D" parent="." index="6"]
 
 editor/display_folded = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Voices" index="0"]
-
-stream = ExtResource( 4 )
-volume_db = 0.0
-pitch_scale = 1.0
-autoplay = false
-mix_target = 0
-bus = "Master"
-
-[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="Voices" index="1"]
 
 stream = ExtResource( 5 )
 volume_db = 0.0
@@ -133,7 +186,7 @@ autoplay = false
 mix_target = 0
 bus = "Master"
 
-[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="Voices" index="2"]
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="Voices" index="1"]
 
 stream = ExtResource( 6 )
 volume_db = 0.0
@@ -142,7 +195,7 @@ autoplay = false
 mix_target = 0
 bus = "Master"
 
-[node name="AudioStreamPlayer4" type="AudioStreamPlayer" parent="Voices" index="3"]
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="Voices" index="2"]
 
 stream = ExtResource( 7 )
 volume_db = 0.0
@@ -151,7 +204,7 @@ autoplay = false
 mix_target = 0
 bus = "Master"
 
-[node name="AudioStreamPlayer5" type="AudioStreamPlayer" parent="Voices" index="4"]
+[node name="AudioStreamPlayer4" type="AudioStreamPlayer" parent="Voices" index="3"]
 
 stream = ExtResource( 8 )
 volume_db = 0.0
@@ -160,7 +213,7 @@ autoplay = false
 mix_target = 0
 bus = "Master"
 
-[node name="AudioStreamPlayer6" type="AudioStreamPlayer" parent="Voices" index="5"]
+[node name="AudioStreamPlayer5" type="AudioStreamPlayer" parent="Voices" index="4"]
 
 stream = ExtResource( 9 )
 volume_db = 0.0
@@ -169,7 +222,7 @@ autoplay = false
 mix_target = 0
 bus = "Master"
 
-[node name="AudioStreamPlayer7" type="AudioStreamPlayer" parent="Voices" index="6"]
+[node name="AudioStreamPlayer6" type="AudioStreamPlayer" parent="Voices" index="5"]
 
 stream = ExtResource( 10 )
 volume_db = 0.0
@@ -178,7 +231,7 @@ autoplay = false
 mix_target = 0
 bus = "Master"
 
-[node name="AudioStreamPlayer8" type="AudioStreamPlayer" parent="Voices" index="7"]
+[node name="AudioStreamPlayer7" type="AudioStreamPlayer" parent="Voices" index="6"]
 
 stream = ExtResource( 11 )
 volume_db = 0.0
@@ -187,7 +240,7 @@ autoplay = false
 mix_target = 0
 bus = "Master"
 
-[node name="AudioStreamPlayer9" type="AudioStreamPlayer" parent="Voices" index="8"]
+[node name="AudioStreamPlayer8" type="AudioStreamPlayer" parent="Voices" index="7"]
 
 stream = ExtResource( 12 )
 volume_db = 0.0
@@ -196,7 +249,7 @@ autoplay = false
 mix_target = 0
 bus = "Master"
 
-[node name="AudioStreamPlayer10" type="AudioStreamPlayer" parent="Voices" index="9"]
+[node name="AudioStreamPlayer9" type="AudioStreamPlayer" parent="Voices" index="8"]
 
 stream = ExtResource( 13 )
 volume_db = 0.0
@@ -205,7 +258,7 @@ autoplay = false
 mix_target = 0
 bus = "Master"
 
-[node name="AudioStreamPlayer11" type="AudioStreamPlayer" parent="Voices" index="10"]
+[node name="AudioStreamPlayer10" type="AudioStreamPlayer" parent="Voices" index="9"]
 
 stream = ExtResource( 14 )
 volume_db = 0.0
@@ -214,7 +267,7 @@ autoplay = false
 mix_target = 0
 bus = "Master"
 
-[node name="AudioStreamPlayer12" type="AudioStreamPlayer" parent="Voices" index="11"]
+[node name="AudioStreamPlayer11" type="AudioStreamPlayer" parent="Voices" index="10"]
 
 stream = ExtResource( 15 )
 volume_db = 0.0
@@ -223,6 +276,17 @@ autoplay = false
 mix_target = 0
 bus = "Master"
 
-[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[node name="AudioStreamPlayer12" type="AudioStreamPlayer" parent="Voices" index="11"]
+
+stream = ExtResource( 16 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[connection signal="timeout" from="Timer" to="." method="_increment_time"]
+
+[connection signal="timeout" from="VoiceTimer" to="." method="_on_Timer_timeout"]
 
 

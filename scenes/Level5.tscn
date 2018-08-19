@@ -74,6 +74,8 @@ __meta__ = {
 
 [node name="Lava" type="Node2D" parent="." index="2"]
 
+editor/display_folded = true
+
 [node name="LavaD" parent="Lava" index="0" instance=ExtResource( 2 )]
 
 position = Vector2( -625.099, 1211.78 )
@@ -129,7 +131,6 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Guards" type="Node2D" parent="." index="7"]
 
-editor/display_folded = true
 position = Vector2( -275.691, 1760.35 )
 _sections_unfolded = [ "Transform" ]
 
