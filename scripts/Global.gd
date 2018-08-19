@@ -4,7 +4,7 @@ var GameState
 var Player
 
 var levels = [
-	"res://scenes/Level1.tscn",
+	"res://scenes/Level3.tscn",
 	"res://scenes/Level2.tscn",
 	"res://scenes/Level3.tscn",
 	"res://scenes/Level4.tscn",

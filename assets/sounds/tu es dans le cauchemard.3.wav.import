@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/tu es dans le cauchemard.3.wav-65f590d375364b985c483f7689c7b926.sample"
+
+[deps]
+
+source_file="res://assets/sounds/tu es dans le cauchemard.3.wav"
+dest_files=[ "res://.import/tu es dans le cauchemard.3.wav-65f590d375364b985c483f7689c7b926.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

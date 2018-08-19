@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/j'ai peur jimmy.2.wav-1f5b472f2f3ec9e2f4b454e677bf5770.sample"
+
+[deps]
+
+source_file="res://assets/sounds/j'ai peur jimmy.2.wav"
+dest_files=[ "res://.import/j'ai peur jimmy.2.wav-1f5b472f2f3ec9e2f4b454e677bf5770.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

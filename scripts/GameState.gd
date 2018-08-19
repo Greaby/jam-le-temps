@@ -2,12 +2,15 @@ extends Node2D
 
 var current_level
 
+var background_switch = false
+
 func _ready():
+	randomize()
 	Global.GameState = self
 	load_next_level()
 	
 func remove_level():
-	for level in self.get_children():
+	for level in $Level.get_children():
 		level.queue_free()
 	
 func realod_level():
@@ -22,7 +25,20 @@ func load_level(scene):
 	current_level = scene
 	remove_level()
 	var level = load(scene)
-	add_child(level.instance())
+	$Level.add_child(level.instance())
 
 func die():
 	realod_level()
+	
+	
+func switch_background_sound():
+	if not background_switch:
+		$AnimationPlayer.play("switch_background_sound")
+		background_switch = true
+
+func _on_Timer_timeout():
+	var voices = $Voices.get_children()
+	var voice = voices[randi() % voices.size()]
+	voice.play()
+	$Timer.wait_time = randi() % 30 + 30
+	

@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scripts/Door.gd" type="Script" id=1]
-[ext_resource path="res://assets/door.png" type="Texture" id=2]
+[ext_resource path="res://assets/porte.png" type="Texture" id=2]
 
 [sub_resource type="Animation" id=1]
 
@@ -19,7 +19,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( -4, -4 ),
 "update": 0,
-"values": [ Vector2( -32, 0 ), Vector2( -96, 0 ) ]
+"values": [ Vector2( -32, 0 ), Vector2( -100, 0 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Right:position")
@@ -31,13 +31,13 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( -4, -4 ),
 "update": 0,
-"values": [ Vector2( 32, 0 ), Vector2( 96, 0 ) ]
+"values": [ Vector2( 32, 0 ), Vector2( 100, 0 ) ]
 }
 
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
-extents = Vector2( 32, 8 )
+extents = Vector2( 32, 27.9795 )
 
 [node name="Door" type="Node2D"]
 
@@ -57,7 +57,9 @@ blend_times = [  ]
 
 position = Vector2( -32, 0 )
 texture = ExtResource( 2 )
-_sections_unfolded = [ "Transform", "Z Index" ]
+region_enabled = true
+region_rect = Rect2( 0, 0, 64, 56 )
+_sections_unfolded = [ "Region", "Transform", "Z Index" ]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Left" index="0"]
 
@@ -78,7 +80,9 @@ shape = SubResource( 2 )
 
 position = Vector2( 32, 0 )
 texture = ExtResource( 2 )
-_sections_unfolded = [ "Transform", "Z Index" ]
+region_enabled = true
+region_rect = Rect2( 64, 0, 64, 56 )
+_sections_unfolded = [ "Region" ]
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="Right" index="0"]
 

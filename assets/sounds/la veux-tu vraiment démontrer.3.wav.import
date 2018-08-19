@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/la veux-tu vraiment démontrer.3.wav-585a7da53619e82013b1906d6aecb80e.sample"
+
+[deps]
+
+source_file="res://assets/sounds/la veux-tu vraiment démontrer.3.wav"
+dest_files=[ "res://.import/la veux-tu vraiment démontrer.3.wav-585a7da53619e82013b1906d6aecb80e.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

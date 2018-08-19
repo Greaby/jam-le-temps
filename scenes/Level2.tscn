@@ -1,24 +1,27 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://tilesets/ground.tres" type="TileSet" id=1]
-[ext_resource path="res://scenes/lava/LavaC.tscn" type="PackedScene" id=2]
-[ext_resource path="res://scenes/lava/LavaB.tscn" type="PackedScene" id=3]
-[ext_resource path="res://scenes/lava/LavaA.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scenes/lava/LavaG.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scenes/lava/LavaD.tscn" type="PackedScene" id=6]
-[ext_resource path="res://scenes/lava/LavaF.tscn" type="PackedScene" id=7]
-[ext_resource path="res://scenes/lava/LavaE.tscn" type="PackedScene" id=8]
-[ext_resource path="res://tilesets/wall.tres" type="TileSet" id=9]
-[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scripts/Level2.gd" type="Script" id=1]
+[ext_resource path="res://tilesets/ground.tres" type="TileSet" id=2]
+[ext_resource path="res://scenes/lava/LavaC.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/lava/LavaB.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/lava/LavaA.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/lava/LavaG.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/lava/LavaD.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/lava/LavaF.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/lava/LavaE.tscn" type="PackedScene" id=9]
+[ext_resource path="res://tilesets/wall.tres" type="TileSet" id=10]
+[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/End.tscn" type="PackedScene" id=12]
 
-[node name="LevelA" type="Node2D" index="0"]
+[node name="Level2" type="Node2D"]
 
+script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Floor" type="TileMap" parent="." index="0"]
 
 mode = 0
-tile_set = ExtResource( 1 )
+tile_set = ExtResource( 2 )
 cell_size = Vector2( 64, 64 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -40,81 +43,81 @@ _sections_unfolded = [ "Transform" ]
 
 editor/display_folded = true
 
-[node name="LavaC" parent="Lavas" index="0" instance=ExtResource( 2 )]
+[node name="LavaC" parent="Lavas" index="0" instance=ExtResource( 3 )]
 
 position = Vector2( 893.988, 1560.91 )
 
-[node name="LavaB" parent="Lavas" index="1" instance=ExtResource( 3 )]
+[node name="LavaB" parent="Lavas" index="1" instance=ExtResource( 4 )]
 
 position = Vector2( 866.856, 1474.99 )
 
-[node name="LavaC2" parent="Lavas" index="2" instance=ExtResource( 2 )]
+[node name="LavaC2" parent="Lavas" index="2" instance=ExtResource( 3 )]
 
 position = Vector2( 887.999, 356 )
 
-[node name="LavaA" parent="Lavas" index="3" instance=ExtResource( 4 )]
+[node name="LavaA" parent="Lavas" index="3" instance=ExtResource( 5 )]
 
 position = Vector2( 1005, 615.999 )
 
-[node name="LavaG" parent="Lavas" index="4" instance=ExtResource( 5 )]
+[node name="LavaG" parent="Lavas" index="4" instance=ExtResource( 6 )]
 
 position = Vector2( 1297, 790.999 )
 
-[node name="LavaD2" parent="Lavas" index="5" instance=ExtResource( 6 )]
+[node name="LavaD2" parent="Lavas" index="5" instance=ExtResource( 7 )]
 
 position = Vector2( 805.68, 2322.26 )
 
-[node name="LavaF" parent="Lavas" index="6" instance=ExtResource( 7 )]
+[node name="LavaF" parent="Lavas" index="6" instance=ExtResource( 8 )]
 
 position = Vector2( 1027.14, 2281.25 )
 
-[node name="LavaD" parent="Lavas" index="7" instance=ExtResource( 6 )]
+[node name="LavaD" parent="Lavas" index="7" instance=ExtResource( 7 )]
 
 position = Vector2( 684.264, 554.561 )
 rotation = 0.740777
 
-[node name="LavaE" parent="Lavas" index="8" instance=ExtResource( 8 )]
+[node name="LavaE" parent="Lavas" index="8" instance=ExtResource( 9 )]
 
 position = Vector2( 928.712, 2379.68 )
 
-[node name="LavaG2" parent="Lavas" index="9" instance=ExtResource( 5 )]
+[node name="LavaG2" parent="Lavas" index="9" instance=ExtResource( 6 )]
 
 position = Vector2( 1035.34, 2482.2 )
 rotation = 1.25965
 
-[node name="LavaG3" parent="Lavas" index="10" instance=ExtResource( 5 )]
+[node name="LavaG3" parent="Lavas" index="10" instance=ExtResource( 6 )]
 
 position = Vector2( 805.68, 2490.41 )
 
-[node name="LavaA2" parent="Lavas" index="11" instance=ExtResource( 4 )]
+[node name="LavaA2" parent="Lavas" index="11" instance=ExtResource( 5 )]
 
 position = Vector2( 1584.83, 1250.47 )
 
-[node name="LavaB2" parent="Lavas" index="12" instance=ExtResource( 3 )]
+[node name="LavaB2" parent="Lavas" index="12" instance=ExtResource( 4 )]
 
 position = Vector2( 1413.8, 493.869 )
 
-[node name="LavaC3" parent="Lavas" index="13" instance=ExtResource( 2 )]
+[node name="LavaC3" parent="Lavas" index="13" instance=ExtResource( 3 )]
 
 position = Vector2( 1589.38, 150.786 )
 
-[node name="LavaE2" parent="Lavas" index="14" instance=ExtResource( 8 )]
+[node name="LavaE2" parent="Lavas" index="14" instance=ExtResource( 9 )]
 
 position = Vector2( 1407.61, -808.027 )
 
-[node name="LavaF2" parent="Lavas" index="15" instance=ExtResource( 7 )]
+[node name="LavaF2" parent="Lavas" index="15" instance=ExtResource( 8 )]
 
 position = Vector2( 1534.85, -1387.41 )
 
-[node name="LavaE3" parent="Lavas" index="16" instance=ExtResource( 8 )]
+[node name="LavaE3" parent="Lavas" index="16" instance=ExtResource( 9 )]
 
 position = Vector2( 1480.32, -1232.9 )
 
-[node name="LavaG4" parent="Lavas" index="17" instance=ExtResource( 5 )]
+[node name="LavaG4" parent="Lavas" index="17" instance=ExtResource( 6 )]
 
 position = Vector2( 1605.28, -1173.83 )
 
-[node name="LavaD3" parent="Lavas" index="18" instance=ExtResource( 6 )]
+[node name="LavaD3" parent="Lavas" index="18" instance=ExtResource( 7 )]
 
 position = Vector2( 1279.37, 1967.04 )
 rotation = -0.401283
@@ -122,7 +125,7 @@ rotation = -0.401283
 [node name="Wall" type="TileMap" parent="." index="2"]
 
 mode = 0
-tile_set = ExtResource( 9 )
+tile_set = ExtResource( 10 )
 cell_size = Vector2( 64, 64 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -140,36 +143,15 @@ format = 1
 tile_data = PoolIntArray( -1834987, 0, 0, -1834986, 0, 2, -1834985, 0, 2, -1834984, 0, 2, -1834983, 0, 1, -1769451, 0, 65538, -1769447, 0, 65538, -1703918, 0, 0, -1703917, 0, 2, -1703916, 0, 2, -1703915, 0, 65537, -1703911, 0, 65536, -1703910, 0, 2, -1703909, 0, 2, -1703908, 0, 1, -1638382, 0, 65538, -1638372, 0, 65538, -1572846, 0, 65538, -1572836, 0, 65538, -1507310, 0, 65538, -1507300, 0, 65538, -1441774, 0, 65538, -1441764, 0, 65538, -1376238, 0, 65538, -1376228, 0, 65538, -1310702, 0, 65538, -1310692, 0, 65538, -1245166, 0, 65538, -1245156, 0, 65538, -1179630, 0, 65538, -1179620, 0, 65538, -1114094, 0, 65538, -1114084, 0, 65538, -1048558, 0, 65538, -1048548, 0, 65538, -983022, 0, 65538, -983012, 0, 65538, -917486, 0, 65536, -917485, 0, 1, -917477, 0, 0, -917476, 0, 65537, -851949, 0, 65536, -851948, 0, 2, -851947, 0, 1, -851943, 0, 0, -851942, 0, 2, -851941, 0, 65537, -786411, 0, 65538, -786407, 0, 65538, -720875, 0, 65538, -720871, 0, 65538, -655339, 0, 65538, -655335, 0, 65538, -589803, 0, 65538, -589799, 0, 65538, -524267, 0, 65538, -524263, 0, 65538, -458731, 0, 65538, -458727, 0, 65538, -393195, 0, 65538, -393191, 0, 65538, -327659, 0, 65538, -327655, 0, 65538, -262123, 0, 65538, -262119, 0, 65538, -131074, 0, 0, -131073, 0, 2, -196608, 0, 2, -196607, 0, 2, -196606, 0, 1, -196587, 0, 65538, -196583, 0, 65538, -65538, 0, 65538, -131070, 0, 65538, -131051, 0, 65538, -131047, 0, 65538, -2, 0, 65538, -65534, 0, 65538, -65515, 0, 65538, -65511, 0, 65538, 65534, 0, 65538, 2, 0, 65538, 21, 0, 65538, 25, 0, 65538, 131070, 0, 65538, 65538, 0, 65538, 65557, 0, 65538, 65561, 0, 65538, 196606, 0, 65538, 131074, 0, 65538, 131093, 0, 65538, 131097, 0, 65538, 262142, 0, 65538, 196610, 0, 65538, 196617, 0, 0, 196618, 0, 2, 196619, 0, 2, 196620, 0, 2, 196621, 0, 2, 196622, 0, 2, 196623, 0, 2, 196624, 0, 2, 196625, 0, 2, 196626, 0, 2, 196627, 0, 2, 196628, 0, 2, 196629, 0, 65540, 196633, 0, 65538, 327678, 0, 65538, 262146, 0, 65538, 262153, 0, 65538, 262165, 0, 65538, 262169, 0, 65538, 393214, 0, 65538, 327682, 0, 65536, 327683, 0, 2, 327684, 0, 2, 327685, 0, 2, 327686, 0, 2, 327687, 0, 2, 327688, 0, 2, 327689, 0, 65537, 327701, 0, 65538, 327705, 0, 65538, 458750, 0, 65538, 393237, 0, 65538, 393241, 0, 65538, 524286, 0, 65538, 458773, 0, 65538, 458777, 0, 65538, 589822, 0, 65538, 524309, 0, 65538, 524313, 0, 65538, 655358, 0, 65536, 655359, 0, 2, 589824, 0, 2, 589825, 0, 2, 589826, 0, 2, 589827, 0, 2, 589828, 0, 2, 589829, 0, 2, 589830, 0, 2, 589831, 0, 2, 589832, 0, 2, 589833, 0, 2, 589834, 0, 2, 589835, 0, 1, 589845, 0, 65538, 589849, 0, 65538, 655371, 0, 65538, 655381, 0, 65538, 655385, 0, 65538, 720907, 0, 65538, 720917, 0, 65538, 720921, 0, 65538, 786443, 0, 65538, 786453, 0, 65538, 786457, 0, 65538, 851979, 0, 65538, 851989, 0, 65538, 851993, 0, 65538, 917515, 0, 65536, 917516, 0, 2, 917517, 0, 2, 917518, 0, 2, 917519, 0, 2, 917520, 0, 1, 917525, 0, 65538, 917529, 0, 65538, 983056, 0, 65538, 983061, 0, 65538, 983065, 0, 65538, 1048592, 0, 65538, 1048597, 0, 65538, 1048601, 0, 65538, 1114128, 0, 65538, 1114133, 0, 65538, 1114137, 0, 65538, 1179657, 0, 0, 1179658, 0, 2, 1179659, 0, 2, 1179660, 0, 2, 1179661, 0, 2, 1179662, 0, 2, 1179663, 0, 2, 1179664, 0, 65537, 1179669, 0, 65538, 1179673, 0, 65538, 1245193, 0, 65538, 1245205, 0, 65538, 1245209, 0, 65538, 1310729, 0, 65538, 1310741, 0, 65538, 1310745, 0, 65538, 1376265, 0, 65538, 1376277, 0, 65538, 1376281, 0, 65538, 1441801, 0, 65538, 1441813, 0, 65538, 1441817, 0, 65538, 1507337, 0, 65538, 1507349, 0, 65538, 1507353, 0, 65538, 1572873, 0, 65538, 1572885, 0, 65538, 1572889, 0, 65538, 1638409, 0, 65538, 1638414, 0, 0, 1638415, 0, 2, 1638416, 0, 2, 1638417, 0, 2, 1638418, 0, 2, 1638419, 0, 2, 1638420, 0, 2, 1638421, 0, 65537, 1638425, 0, 65538, 1703945, 0, 65538, 1703950, 0, 65538, 1703961, 0, 65538, 1769481, 0, 65538, 1769486, 0, 65538, 1769497, 0, 65538, 1835017, 0, 65538, 1835022, 0, 65538, 1835033, 0, 65538, 1900553, 0, 65538, 1900558, 0, 65538, 1900569, 0, 65538, 1966089, 0, 65538, 1966094, 0, 65538, 1966105, 0, 65538, 2031625, 0, 65538, 2031630, 0, 65538, 2031636, 0, 0, 2031637, 0, 2, 2031638, 0, 2, 2031639, 0, 2, 2031640, 0, 2, 2031641, 0, 65537, 2097160, 0, 0, 2097161, 0, 65537, 2097166, 0, 65538, 2097172, 0, 65538, 2162696, 0, 65538, 2162702, 0, 65538, 2162708, 0, 65538, 2228232, 0, 65538, 2228237, 0, 65542, 2228238, 0, 131079, 2228239, 0, 5, 2228244, 0, 65538, 2293768, 0, 65538, 2293774, 0, 65538, 2293780, 0, 65538, 2359304, 0, 65538, 2359310, 0, 6, 2359316, 0, 65538, 2424840, 0, 65538, 2424852, 0, 65538, 2490376, 0, 65538, 2490388, 0, 65538, 2555912, 0, 65538, 2555924, 0, 65538, 2621448, 0, 65538, 2621460, 0, 65538, 2686984, 0, 65538, 2686996, 0, 65538, 2752520, 0, 65536, 2752521, 0, 2, 2752522, 0, 2, 2752523, 0, 2, 2752524, 0, 2, 2752525, 0, 2, 2752526, 0, 2, 2752527, 0, 2, 2752528, 0, 2, 2752529, 0, 2, 2752530, 0, 2, 2752531, 0, 2, 2752532, 0, 65537 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Player" parent="." index="3" instance=ExtResource( 10 )]
+[node name="Player" parent="." index="3" instance=ExtResource( 11 )]
 
 position = Vector2( 0, -60.9999 )
 rotation = 1.5708
 _sections_unfolded = [ "Collision", "Transform" ]
 MAX_SPEED = 800
 
-[node name="Camera2D2" type="Camera2D" parent="Player" index="3"]
+[node name="End" parent="." index="4" instance=ExtResource( 12 )]
 
-anchor_mode = 1
-rotating = false
-current = true
-zoom = Vector2( 1, 1 )
-limit_left = -10000000
-limit_top = -10000000
-limit_right = 10000000
-limit_bottom = 10000000
-limit_smoothed = false
-drag_margin_h_enabled = true
-drag_margin_v_enabled = true
-smoothing_enabled = false
-smoothing_speed = 5.0
-offset_v = 0.0
-offset_h = 0.0
-drag_margin_left = 0.2
-drag_margin_top = 0.2
-drag_margin_right = 0.2
-drag_margin_bottom = 0.2
-editor_draw_screen = true
-editor_draw_limits = false
-editor_draw_drag_margin = false
+position = Vector2( 1503.53, -1653.06 )
 
 

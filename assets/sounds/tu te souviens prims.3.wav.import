@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/tu te souviens prims.3.wav-9bba7868c0ed95cbea5be5cdaf4a8eca.sample"
+
+[deps]
+
+source_file="res://assets/sounds/tu te souviens prims.3.wav"
+dest_files=[ "res://.import/tu te souviens prims.3.wav-9bba7868c0ed95cbea5be5cdaf4a8eca.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/et si un ami te chantait.4.wav-8ba85efb3c91947abdad9fd7692e3aae.sample"
+
+[deps]
+
+source_file="res://assets/sounds/et si un ami te chantait.4.wav"
+dest_files=[ "res://.import/et si un ami te chantait.4.wav-8ba85efb3c91947abdad9fd7692e3aae.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

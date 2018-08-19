@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/qui ramassera cette pierre.3.wav-66586c725158a2dd8874cf4f086b88d6.sample"
+
+[deps]
+
+source_file="res://assets/sounds/qui ramassera cette pierre.3.wav"
+dest_files=[ "res://.import/qui ramassera cette pierre.3.wav-66586c725158a2dd8874cf4f086b88d6.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
