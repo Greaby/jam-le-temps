@@ -40,5 +40,5 @@ func _on_Timer_timeout():
 	var voices = $Voices.get_children()
 	var voice = voices[randi() % voices.size()]
 	voice.play()
-	$Timer.wait_time = randi() % 30 + 30
+	$Timer.wait_time = randi() % 15 + 20
 	

@@ -57,5 +57,9 @@ func _physics_process(delta):
 	
 	if not velocity == Vector2():
 		rotation = velocity.angle() if not is_reverse else velocity.angle() + PI
+		
+		
+func _process(delta):
+	$Camera2D/Sprite.rotation = -self.rotation
 
 

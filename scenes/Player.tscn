@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scripts/Player.gd" type="Script" id=1]
-[ext_resource path="res://assets/car.png" type="Texture" id=2]
+[ext_resource path="res://assets/motard.png" type="Texture" id=2]
+[ext_resource path="res://assets/fond1.png" type="Texture" id=3]
 
 [sub_resource type="CapsuleShape2D" id=1]
 
@@ -9,7 +10,7 @@ custom_solver_bias = 0.0
 radius = 17.7483
 height = 33.1955
 
-[node name="Player" type="KinematicBody2D"]
+[node name="Player" type="KinematicBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -58,5 +59,11 @@ drag_margin_bottom = 0.2
 editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
+
+[node name="Sprite" type="Sprite" parent="Camera2D" index="0"]
+
+z_index = -999
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Visibility", "Z Index" ]
 
 
