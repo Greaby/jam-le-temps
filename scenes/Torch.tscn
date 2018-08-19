@@ -19,7 +19,7 @@ range_z_max = 1024
 range_layer_min = 0
 range_layer_max = 0
 range_item_cull_mask = 1
-shadow_enabled = true
+shadow_enabled = false
 shadow_color = Color( 0, 0, 0, 0 )
 shadow_buffer_size = 2048
 shadow_gradient_length = 0.0
@@ -42,7 +42,7 @@ audio_bus_name = "Master"
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" index="0"]
 
 build_mode = 0
-polygon = PoolVector2Array( 60.1805, -16.188, 618.155, -193.533, 618.117, 186.624, 58.3066, 20.0934 )
+polygon = PoolVector2Array( 57.0613, -14.9129, 559.021, -172.726, 575.853, -13.703, 558.749, 167.117, 58.3066, 20.0934 )
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 
